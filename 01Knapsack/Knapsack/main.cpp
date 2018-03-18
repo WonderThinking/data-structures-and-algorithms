@@ -1,11 +1,11 @@
 /********************
-Author:		  Wang Xinqi
-Date:		  2018-3-18
-Description:  ±³°üÎÊÌâ²ÉÓÃ¶¯Ì¬¹æ»®À´½â¾ö(Dynamic Programming£©
-			  Ë¼Â·Ô´×ÔDD´óÅ£µÄ¡°±³°ü¾Å½²¡±,°üÀ¨ÒÔÏÂÄÚÈÝ
-			  0/1±³°üÎÊÌâ       ÍêÈ«±³°üÎÊÌâ        ¶àÖØ±³°üÎÊÌâ
-			  »ìºÏÈýÖÖ±³°üÎÊÌâ  ¶þÎ¬·ÑÓÃµÄ±³°üÎÊÌâ  ·Ö×é±³°üÎÊÌâ
-			  ÓÐÒÀÀµµÄ±³°üÎÊÌâ  ·º»¯ÎïÆ·µÄ±³°üÎÊÌâ  ±³°üÎÊÌâÎÊ·¨±ä»¯--Çó´ÎÓÅ½â¡¢µÚKÓÅ½â		  
+Author:	      Wang Xinqi
+Date:	      2018-3-18
+Description:  èƒŒåŒ…é—®é¢˜é‡‡ç”¨åŠ¨æ€è§„åˆ’æ¥è§£å†³(Dynamic Programmingï¼‰
+	      æ€è·¯æºè‡ªDDå¤§ç‰›çš„â€œèƒŒåŒ…ä¹è®²â€,åŒ…æ‹¬ä»¥ä¸‹å†…å®¹
+	      0/1èƒŒåŒ…é—®é¢˜       å®Œå…¨èƒŒåŒ…é—®é¢˜         å¤šé‡èƒŒåŒ…é—®é¢˜
+	      æ··åˆä¸‰ç§èƒŒåŒ…é—®é¢˜   äºŒç»´è´¹ç”¨çš„èƒŒåŒ…é—®é¢˜   åˆ†ç»„èƒŒåŒ…é—®é¢˜
+	      æœ‰ä¾èµ–çš„èƒŒåŒ…é—®é¢˜   æ³›åŒ–ç‰©å“çš„èƒŒåŒ…é—®é¢˜   èƒŒåŒ…é—®é¢˜é—®æ³•å˜åŒ–--æ±‚æ¬¡ä¼˜è§£ã€ç¬¬Kä¼˜è§£		  
 *********************/
 
 #include<iostream>
@@ -23,21 +23,21 @@ using namespace std;
 
 int main()
 {
-	////Ò»Ð©²âÊÔÓÃÀý
+	////ä¸€äº›æµ‹è¯•ç”¨ä¾‹
 	//int v[] = { 1,2,3,4,5 };
 	//int w[] = { 5,4,3,2,1 };
 	//int c = 10;
 	//int n = 5;
-	//cout << "×îÓÅÖµ " << Knapsack2_1(v, w, c, n) << endl;
-	//cout << "\n×îÓÅÖµ " << Knapsack2_2(v, w, c, n) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack2_1(v, w, c, n) << endl;
+	//cout << "\næœ€ä¼˜å€¼ " << Knapsack2_2(v, w, c, n) << endl;
 
 	//int v[] = { 2,2,3,4,5 };
 	//int w[] = { 5,4,3,2,1 };
 	//int N[] = { 2,2,1,2,1 };
 	//int c = 10;
 	//int n = 5;
-	//cout << "×îÓÅÖµ " << Knapsack3(v, w, N, c, n) << endl;
-	//cout << "×îÓÅÖµ " << Knapsack4(v, w, N, c, n) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack3(v, w, N, c, n) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack4(v, w, N, c, n) << endl;
 
 	//int v[] = { 120,240,310,220 };
 	//int w[] = { 160,80,220,40 };
@@ -45,14 +45,14 @@ int main()
 	//int cw = 320;
 	//int cq = 350;
 	//int n = 4;
-	//cout << "×îÓÅÖµ " << Knapsack5(v, w, q, cw, cq, n) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack5(v, w, q, cw, cq, n) << endl;
 
 	//int g = 2;
 	//vector<vector<int> > v = { {1,2},{1,3} };
 	//vector<vector<int> > w = { {1,2},{1,2} };
 	//vector<int>  m = { 2,2 };
 	//int c = 2;
-	//cout << "×îÓÅÖµ " << Knapsack6(v, w, m, c, g) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack6(v, w, m, c, g) << endl;
 
 	//vector<vector<int> > v = { {50,80},{130},{70,40,60} };
 	//vector<vector<int> > w = { {30,25},{50},{40,30,35} };
@@ -60,14 +60,14 @@ int main()
 	//vector<int> m = { 2,1,3 };
 	//int c = 800;
 	//int n = 3;
-	//cout << "×îÓÅÖµ " << Knapsack7(v, w, W, m, c, n) << endl;
+	//cout << "æœ€ä¼˜å€¼ " << Knapsack7(v, w, W, m, c, n) << endl;
 
 	int v[] = { 1,2,3,4,5 };
 	int w[] = { 5,4,3,2,1 };
 	int c = 10;
 	int n = 5;
 	int K = 2;
-	cout << "µÚ" << K << "ÓÅÖµ " << Knapsack9(v, w, c, n, K) << endl;
+	cout << "ç¬¬" << K << "ä¼˜å€¼ " << Knapsack9(v, w, c, n, K) << endl;
 	system("pause");
 	return 0;
 }
