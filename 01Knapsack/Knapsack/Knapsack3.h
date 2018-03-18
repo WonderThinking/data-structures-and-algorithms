@@ -1,17 +1,17 @@
 /********************
-Function:   ¶àÖØ±³°üÎÊÌâ
-			Ã¿¼şÎïÆ·µÄÊıÁ¿ÓĞÔ¼Êø£¬Çó²»³¬¹ı±³°üÈİÁ¿µÄ×î´ó¼ÛÖµ
-Inputs:     int[] v  ¸÷¸öÎïÆ·µÄ¼ÛÖµvalue
-			int[] w  ¸÷¸öÎïÆ·µÄÖØÁ¿weight
-			int   c  ±³°üÈİÁ¿capability
-			int   n  ÎïÆ·µÄÖÖÊı¼´v,wµÄÊı×é´óĞ¡
-Return:     ·µ»Ø¸ÃÎÊÌâµÄ×îÓÅÖµ
+Function:   å¤šé‡èƒŒåŒ…é—®é¢˜
+	    æ¯ä»¶ç‰©å“çš„æ•°é‡æœ‰çº¦æŸï¼Œæ±‚ä¸è¶…è¿‡èƒŒåŒ…å®¹é‡çš„æœ€å¤§ä»·å€¼
+Inputs:     int[] v  å„ä¸ªç‰©å“çš„ä»·å€¼value
+	    int[] w  å„ä¸ªç‰©å“çš„é‡é‡weight
+	    int   c  èƒŒåŒ…å®¹é‡capability
+	    int   n  ç‰©å“çš„ç§æ•°å³v,wçš„æ•°ç»„å¤§å°
+Return:     è¿”å›è¯¥é—®é¢˜çš„æœ€ä¼˜å€¼
 *********************/
 #include<vector>
 #include<algorithm>
 using namespace std;
 
-// ¶àÖØ±³°üÎÊÌâ
+// å¤šé‡èƒŒåŒ…é—®é¢˜
 int Knapsack3(int* v, int* w, int* N, int c, int n)
 {
 	vector<int> dp(c + 1, 0);
