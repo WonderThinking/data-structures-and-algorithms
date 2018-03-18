@@ -1,20 +1,20 @@
 /********************
-Function:   ±³°üÎÊÌâÎÊ·¨±ä»¯--Çó´ÎÓÅ½â¡¢µÚKÓÅ½â
-Inputs:     int[] v  ¸÷¸öÎïÆ·µÄ¼ÛÖµvalue
-			int[] w  ¸÷¸öÎïÆ·µÄÖØÁ¿weight
-			int   c  ±³°üÈÝÁ¿capability
-			int   n  ÎïÆ·µÄÖÖÊý¼´v,wµÄÊý×é´óÐ¡
-			int   K  µÚKÓÅ½â  
-Return:     ·µ»Ø¸ÃÎÊÌâµÄ×îÓÅÖµ
-Others:		Êµ¼ÊÉÏÒ»¸öÕýÈ·µÄ×´Ì¬×ªÒÆ·½³ÌÔÚÇó½âµÄ¹ý³ÌÖÐ±éÀúÁËËùÓÐµÄ¿ÉÓÃ²ßÂÔ£¬Ò²¾Í¸²¸ÇÁËÎÊÌâµÄËùÓÐ·½°¸.
-			Ö»²»¹ýÓÉÓÚÊÇÇó×îÓÅ½â£¬°ÑÆäËû´ï²»µ½×îÓÅ²ßÂÔµÄ·½°¸¶¼¸øºöÂÔÁË.
-			¶ÔÓÚÇó´ÎÓÅ½âºÍµÚKÓÅ½âµÄ·½·¨£º ¶ÔÓÚÈÎÁ½¸ö×´Ì¬µÄmaxÔËËãµÈ¼ÛÓÚÁ½¸öÓÉ´óµ½Ð¡Ë³ÐòÅÅÁÐµÄ¶ÓÁÐ½øÐÐºÏ²¢.Àý×ÓHDU2639
+Function:   èƒŒåŒ…é—®é¢˜é—®æ³•å˜åŒ–--æ±‚æ¬¡ä¼˜è§£ã€ç¬¬Kä¼˜è§£
+Inputs:     int[] v  å„ä¸ªç‰©å“çš„ä»·å€¼value
+	    int[] w  å„ä¸ªç‰©å“çš„é‡é‡weight
+	    int   c  èƒŒåŒ…å®¹é‡capability
+	    int   n  ç‰©å“çš„ç§æ•°å³v,wçš„æ•°ç»„å¤§å°
+	    int   K  ç¬¬Kä¼˜è§£  
+Return:     è¿”å›žè¯¥é—®é¢˜çš„æœ€ä¼˜å€¼
+Others:	    å®žé™…ä¸Šä¸€ä¸ªæ­£ç¡®çš„çŠ¶æ€è½¬ç§»æ–¹ç¨‹åœ¨æ±‚è§£çš„è¿‡ç¨‹ä¸­éåŽ†äº†æ‰€æœ‰çš„å¯ç”¨ç­–ç•¥ï¼Œä¹Ÿå°±è¦†ç›–äº†é—®é¢˜çš„æ‰€æœ‰æ–¹æ¡ˆ.
+	    åªä¸è¿‡ç”±äºŽæ˜¯æ±‚æœ€ä¼˜è§£ï¼ŒæŠŠå…¶ä»–è¾¾ä¸åˆ°æœ€ä¼˜ç­–ç•¥çš„æ–¹æ¡ˆéƒ½ç»™å¿½ç•¥äº†.
+	    å¯¹äºŽæ±‚æ¬¡ä¼˜è§£å’Œç¬¬Kä¼˜è§£çš„æ–¹æ³•ï¼š å¯¹äºŽä»»ä¸¤ä¸ªçŠ¶æ€çš„maxè¿ç®—ç­‰ä»·äºŽä¸¤ä¸ªç”±å¤§åˆ°å°é¡ºåºæŽ’åˆ—çš„é˜Ÿåˆ—è¿›è¡Œåˆå¹¶.ä¾‹å­HDU2639
 *********************/
 #include<vector>
 #include<algorithm>
 using namespace std;
 
-//  ±³°üÎÊÌâÇóµÚKÓÅ½â
+//  èƒŒåŒ…é—®é¢˜æ±‚ç¬¬Kä¼˜è§£
 int Knapsack9(int* v, int* w, int c, int n, int K)
 {
 	vector<vector<int> > dp(c + 1, vector<int>(K, 0));
