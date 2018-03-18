@@ -1,21 +1,21 @@
 /********************
-Function:   ·º»¯ÎïÆ·µÄ±³°üÎÊÌâ
-Inputs:     int[] v   ¸÷¸öÎïÆ·µÄ¼ÛÖµvalue
-			int[] w   ¸÷¸öÎïÆ·µÄÖØÁ¿weight
-			Êı×émÖĞm[i]¼ÇÂ¼µÚi×éÖĞµÄÎïÆ·Êı
-			int   c  ±³°üÈİÁ¿capability
-			int   n  ÎïÆ·µÄÖÖÊı
-Return:     ·µ»Ø¸ÃÎÊÌâµÄ×îÓÅÖµ
-Others:		·º»¯ÎïÆ·µÄ±³°üÎÊÌâ±¾ÖÊÉÏÓë·Ö×é±³°üÎÊÌâ ÀàËÆ
-			·º»¯ÎïÆ· w = h(v)£¬ Ê×ÏÈĞèÒª¸ù¾İÈİÁ¿cµÄÔ¼ÊøÏÈ¼ÆËã³övºÍw
-			ÀıÌâÒ»http://blog.csdn.net/qq_39670434/article/details/79483102
-			ÀıÌâ¶şhttp://www.hihocoder.com/discuss/question/2640
+Function:   æ³›åŒ–ç‰©å“çš„èƒŒåŒ…é—®é¢˜
+Inputs:     int[] v   å„ä¸ªç‰©å“çš„ä»·å€¼value
+	    int[] w   å„ä¸ªç‰©å“çš„é‡é‡weight
+	    æ•°ç»„mä¸­m[i]è®°å½•ç¬¬iç»„ä¸­çš„ç‰©å“æ•°
+	    int   c  èƒŒåŒ…å®¹é‡capability
+	    int   n  ç‰©å“çš„ç§æ•°
+Return:     è¿”å›è¯¥é—®é¢˜çš„æœ€ä¼˜å€¼
+Others:	    æ³›åŒ–ç‰©å“çš„èƒŒåŒ…é—®é¢˜æœ¬è´¨ä¸Šä¸åˆ†ç»„èƒŒåŒ…é—®é¢˜ ç±»ä¼¼
+	    æ³›åŒ–ç‰©å“ w = h(v)ï¼Œ é¦–å…ˆéœ€è¦æ ¹æ®å®¹é‡cçš„çº¦æŸå…ˆè®¡ç®—å‡ºvå’Œw
+	    ä¾‹é¢˜ä¸€http://blog.csdn.net/qq_39670434/article/details/79483102
+	    ä¾‹é¢˜äºŒhttp://www.hihocoder.com/discuss/question/2640
 *********************/
 #include<vector>
 #include<algorithm>
 using namespace std;
 
-//  ·º»¯ÎïÆ·µÄ±³°üÎÊÌâ
+//  æ³›åŒ–ç‰©å“çš„èƒŒåŒ…é—®é¢˜
 int Knapsack8(vector<vector<int> > v, vector<vector<int> > w, vector<int> m, int c, int n)
 {
 	vector<int> dp(c + 1, 0);
