@@ -1,19 +1,19 @@
 /********************
-Function:   ¶şÎ¬·ÑÓÃµÄ±³°üÎÊÌâ
-			ÊÜµ½±³°üÈİÁ¿¼°
-Inputs:     int[] v   ¸÷¸öÎïÆ·µÄ¼ÛÖµvalue
-			int[] w   ¸÷¸öÎïÆ·µÄÖØÁ¿weight
-			int[] q   Ã¿ÖÖÎïÆ·µÄÊıÁ¿
-			int   cw  ±³°üÒª×°ÎïÆ·µÄÖØÁ¿Ô¼Êø
-			int   cq  ±³°üÒª×°ÎïÆ·µÄÊıÁ¿Ô¼Êø
-			int   n   ÎïÆ·µÄÖÖÊı
-Return:     ·µ»Ø¸ÃÎÊÌâµÄ×îÓÅÖµ
+Function:   äºŒç»´è´¹ç”¨çš„èƒŒåŒ…é—®é¢˜
+	    å—åˆ°èƒŒåŒ…å®¹é‡åŠ
+Inputs:     int[] v   å„ä¸ªç‰©å“çš„ä»·å€¼value
+	    int[] w   å„ä¸ªç‰©å“çš„é‡é‡weight
+	    int[] q   æ¯ç§ç‰©å“çš„æ•°é‡
+	    int   cw  èƒŒåŒ…è¦è£…ç‰©å“çš„é‡é‡çº¦æŸ
+	    int   cq  èƒŒåŒ…è¦è£…ç‰©å“çš„æ•°é‡çº¦æŸ
+	    int   n   ç‰©å“çš„ç§æ•°
+Return:     è¿”å›è¯¥é—®é¢˜çš„æœ€ä¼˜å€¼
 *********************/
 #include<vector>
 #include<algorithm>
 using namespace std;
 
-//  ¶şÎ¬·ÑÓÃµÄ±³°üÎÊÌâ
+//  äºŒç»´è´¹ç”¨çš„èƒŒåŒ…é—®é¢˜
 int Knapsack5(int* v, int* w, int* q, int cw, int cq, int n)
 {
 	vector<vector<int> > dp(cw + 1, vector<int>(cq + 1, 0));
