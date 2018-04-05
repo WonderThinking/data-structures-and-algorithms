@@ -1,5 +1,5 @@
 /*   计数排序 Counting Sort
- *   计数排序不是基于比较的排序算法,其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中
+ *   算法思想：计数排序不是基于比较的排序算法,其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中
  *	 算法描述：
  *		1、找到最大和最小元素，开辟相应的计数数组
  *		2、统计元素出现的次数，累加到计数数组中
@@ -11,9 +11,10 @@
 
 #include<vector>
 using namespace std;
-
 vector<int> countingSort(vector<int> arr)
 {
+	if (arr.size() <= 1)
+		return arr;
 	int n = arr.size();
 
 	int minValue = arr[0];
