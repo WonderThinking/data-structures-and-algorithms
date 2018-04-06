@@ -6,6 +6,10 @@
 #include"BubbleSort.h"
 #include"SelectionSort.h"
 #include"InsertionSort.h"
+#include"ShellSort.h"
+#include"QuickSort.h"
+#include"MergeSort.h"
+#include"HeapSort.h"
 using namespace std;
 
 int main()
@@ -20,7 +24,11 @@ int main()
 	//vector<int> result = radixSort(arr);
 	//vector<int> result = bubbleSort(arr);
 	//vector<int> result = selectionSort(arr);
-	vector<int> result = insertionSort(arr);
+	//vector<int> result = insertionSort(arr);
+	//vector<int> result = shellSort(arr);
+	//vector<int> result = quickSort(arr);
+	//vector<int> result = mergeSort(arr);
+	vector<int> result = heapSort(arr);
 	for (int i = 0;i < result.size();++i)
 		cout << result[i] << ' ';
 	cout << endl;
