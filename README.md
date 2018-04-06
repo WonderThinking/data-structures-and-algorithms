@@ -10,7 +10,7 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 有依赖的背包问题
 >* 泛化物品的背包问题
 >* 背包问题问法变化--求次优解、第K优解
-## [02sorting 排序算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/02sorting)
+## [02sorting 十大排序算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/02sorting)
 >* 冒泡排序 
 >* 选择排序
 >* 插入排序
@@ -21,5 +21,11 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 计数排序
 >* 桶排序
 >* 基数排序               
-	            
-	           
+## [03Search 七大查找算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/03Search)	            
+>* 顺序查找
+>* 二分查找
+>* 插值查找
+>* 斐波那契查找
+>* 树表查找
+>* 分块查找
+>* 哈希查找           
