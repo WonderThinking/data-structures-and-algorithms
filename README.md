@@ -4,7 +4,7 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 一、0/1背包问题 
 >* 二、完全背包问题
 >* 三、多重背包问题
->>	   [题目HDU2844](http://acm.hdu.edu.cn/showproblem.php?pid=2844 "HDU2844 Coins") 多重背包的优化算法test
+>>	   [多重背包加二进制优化 HDU2844](http://acm.hdu.edu.cn/showproblem.php?pid=2844 "HDU2844 Coins")
 >* 四、混合三种背包问题
 >* 五、二维费用的背包问题
 >* 六、分组背包问题
