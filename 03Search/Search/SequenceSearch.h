@@ -1,7 +1,4 @@
-/* À≥–Ú≤È’“ Sequence Search
- * 
- *
- */
+/* À≥–Ú≤È’“ Sequence Search */
 
 #include<vector>
 using namespace std;

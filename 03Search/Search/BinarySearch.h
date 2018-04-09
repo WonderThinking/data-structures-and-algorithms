@@ -1,7 +1,4 @@
-/* 二分查找 Binary Search
- * 
- *
- */
+/* 二分查找 Binary Search */
 
 #include<iostream>
 #include<vector>

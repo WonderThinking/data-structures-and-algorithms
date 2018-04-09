@@ -1,7 +1,4 @@
-/* 斐波那契查找 Fibonacci Search
- * 
- *
- */
+/* 斐波那契查找 Fibonacci Search */
 
 #include<iostream>
 #include<vector>

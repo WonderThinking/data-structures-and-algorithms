@@ -145,6 +145,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="FibonacciSearch.h" />
+    <ClInclude Include="InsertionSearch.h" />
     <ClInclude Include="SequenceSearch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

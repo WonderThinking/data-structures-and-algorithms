@@ -1,7 +1,4 @@
-/* 二分查找 Binary Search
- * 
- *
- */
+/* 插值查找 Insertion Search */
 
 #include<iostream>
 #include<vector>
