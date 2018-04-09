@@ -1,31 +1,36 @@
 # data-structures-and-algorithms
 A summary of some data structures and algorithms. 一些数据结构与算法的总结.
 ## [01Knapsack 背包九讲](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/01Knapsack)
->* 0/1背包问题 
->* 完全背包问题
->* 多重背包问题
->* 混合三种背包问题
->* 二维费用的背包问题
->* 分组背包问题
->* 有依赖的背包问题
->* 泛化物品的背包问题
->* 背包问题问法变化--求次优解、第K优解
+>* 一、0/1背包问题 
+>* 二、完全背包问题
+>* 三、多重背包问题
+>>	   test:多重背包的优化算法 HDU2844(https://www.nowcoder.com/practice/ccd3938d6b2f48bca03cbdeb1b9fa056?tpId=43&tqId=27515&tPage=1&rp=1&ru=/ta/acm-training&qru=/ta/acm-training/question-ranking) 
+>* 四、混合三种背包问题
+>* 五、二维费用的背包问题
+>* 六、分组背包问题
+>* 七、有依赖的背包问题
+>* 八、泛化物品的背包问题
+>* 九、背包问题问法变化--求次优解、第K优解
+>* 
 ## [02sorting 十大排序算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/02sorting)
->* 冒泡排序 
->* 选择排序
->* 插入排序
->* 希尔排序
->* 归并排序
->* 快速排序
->* 堆排序
->* 计数排序
->* 桶排序
->* 基数排序               
+>* 冒泡排序 Bubble Sort
+>* 选择排序 Selection Sort
+>* 插入排序 Insertion Sort
+>* 希尔排序 Shell Sort
+>* 归并排序 Merge Sort
+>* 快速排序 Quick Sort
+>* 堆排序   Heap Sort
+>* 计数排序 Counting Sort
+>* 桶排序   Bucket Sort
+>* 基数排序 Radix Sort
 ## [03Search 七大查找算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/03Search)	            
->* 顺序查找
->* 二分查找
->* 插值查找
->* 斐波那契查找
->* 树表查找
->* 分块查找
->* 哈希查找           
+>* 顺序查找 Sequence Search
+>* 二分查找 Binary Search
+>* 插值查找 Insertion Search
+>* 斐波那契查找 Fibonacci Search
+>* 树表查找 Binary Search Tree
+>* 分块查找 Block Search
+>* 哈希查找 Hash Search
+## [04Tree 各种树的C++实现](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/04Tree)
+>* 二叉查找树 Binary Search Tree
+>* 哈夫曼树 Huffman Tree
