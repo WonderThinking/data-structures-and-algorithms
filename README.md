@@ -10,7 +10,6 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 七、有依赖的背包问题
 >* 八、泛化物品的背包问题
 >* 九、背包问题问法变化--求次优解、第K优解
-<br>
 [test](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/01Knapsack/test/HDU2844) 多重背包加二进制优化问题 [HDU2844](http://acm.hdu.edu.cn/showproblem.php?pid=2844 "HDU2844 Coins")
 ## [02sorting 十大排序算法](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/02sorting)
 >* 冒泡排序 Bubble Sort
