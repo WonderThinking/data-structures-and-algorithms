@@ -3,7 +3,7 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 ## [01Knapsack 背包九讲](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/01Knapsack)
 >* 一、0/1背包问题 
 >* 二、完全背包问题
->* 三、多重背包问题\<br>
+>* 三、多重背包问题<br>
 	   [HDU2844](http://acm.hdu.edu.cn/showproblem.php?pid=2844 "HDU2844 Coins")
 >* 四、混合三种背包问题
 >* 五、二维费用的背包问题
