@@ -35,5 +35,11 @@
     <ClInclude Include="BinarySearchTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BlockSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HashSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

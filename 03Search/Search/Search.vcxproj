@@ -147,7 +147,9 @@
   <ItemGroup>
     <ClInclude Include="BinarySearch.h" />
     <ClInclude Include="BinarySearchTree.h" />
+    <ClInclude Include="BlockSearch.h" />
     <ClInclude Include="FibonacciSearch.h" />
+    <ClInclude Include="HashSearch.h" />
     <ClInclude Include="InsertionSearch.h" />
     <ClInclude Include="SequenceSearch.h" />
   </ItemGroup>
