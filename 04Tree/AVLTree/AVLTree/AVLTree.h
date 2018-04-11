@@ -21,6 +21,7 @@ public:
 	void postOrder();
 private:
 	void insert(int x, AvlNode * &t);
+	void remove(AvlNode * &n, int x);
 	void rotateWithRightChild(AvlNode * &k2);	/* RR型 单向左旋 */
 	void rotateWithLeftChild(AvlNode * &k2);	/* LL型 单向右旋 */
 	void doubleWithRightChild(AvlNode * &k2);	/* RL 双旋转 先右旋后左旋 */
@@ -29,6 +30,7 @@ private:
 	void preOrder(AvlNode *root);
 	void inOrder(AvlNode *root);
 	void postOrder(AvlNode *root);
+	void deleteTree(AvlNode *root);
 };
 
 #endif // !AVLTree_H

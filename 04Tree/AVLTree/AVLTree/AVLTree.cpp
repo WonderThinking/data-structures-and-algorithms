@@ -14,9 +14,18 @@ AVLTree::AVLTree()
 /* 析构函数 */
 AVLTree::~AVLTree()
 {
-
+	deleteTree(m_root);
 }
 
+void AVLTree::deleteTree(AvlNode *root)
+{
+	if (root == NULL)
+		return;
+	deleteTree(root->left);
+	deleteTree(root->right);
+	delete(root);
+	return;
+}
 
 /* 获取高度 */
 int AVLTree::getHeight(AvlNode *t)
@@ -112,14 +121,66 @@ bool AVLTree::contains(AvlNode * &root, int &key)
 
 
 /* 删除元素 */
-void AVLTree::remove(int key)
+void AVLTree::remove(int x)
 {
-
-
-
+	remove(m_root, x);
 }
 
-
+void AVLTree::remove(AvlNode * &node, int x)
+{
+	if (node == NULL)		 /* 没有找到节点 */
+		return; 
+	if (x < node->element)	 /* 在左子树删除*/
+	{
+		remove(node->left, x);
+		if (getHeight(node->right) - getHeight(node->left) == 2)
+		{
+			if (node->right->left != NULL && getHeight(node->right->left) > getHeight(node->right->right))
+				doubleWithRightChild(node);
+			else
+				rotateWithRightChild(node);
+		}
+	}
+	else if (x > node->element)	/* 在右子树删除 */
+	{
+		remove(node->right, x);
+		if (getHeight(node->left) - getHeight(node->right) == 2)
+		{
+			if (node->left->right != NULL && getHeight(node->left->right) > getHeight(node->left->left))
+				doubleWithLeftChild(node);
+			else
+				rotateWithLeftChild(node);
+		}
+	}
+	else						/* 找到要删除的节点 */
+	{
+		if (node->left != NULL && node->right != NULL) /* 此节点有两个子树*/
+		{
+			AvlNode *tmp = node->right;
+			while (tmp->left != NULL)
+				tmp = tmp->left;				 /* 找到右子树中值最小的节点 */
+			node->element = tmp->element;		 /* 把右子树中最小节点的值赋值给本节点 */
+			remove(node->right, tmp->element);	 /* 删除右子树中最小值的节点 */
+			if (getHeight(node->left) - getHeight(node->right) == 2)
+			{
+				if (node->left->right != NULL && getHeight(node->left->right) > getHeight(node->left->left))
+					doubleWithLeftChild(node);
+				else
+					rotateWithLeftChild(node);
+			}
+		}
+		else	/* 此节点有1个或0个子树 */
+		{
+			AvlNode *tmp = node;
+			if (node->left == NULL)
+				node = node->right;
+			else if (node->right == NULL)
+				node = node->left;
+			delete(tmp);
+			tmp = NULL;
+		}
+	}
+}
 /* 前序遍历 */
 void AVLTree::preOrder() 
 {
@@ -127,9 +188,12 @@ void AVLTree::preOrder()
 }
 void AVLTree::preOrder(AvlNode *root)
 {
-	printf("%d ", root->element);
-	preOrder(root->left);
-	preOrder(root->right);
+	if (root != NULL)
+	{
+		printf("%d ", root->element);
+		preOrder(root->left);
+		preOrder(root->right);
+	}
 }
 
 /* 中序遍历 */
@@ -139,9 +203,12 @@ void AVLTree::inOrder()
 }
 void AVLTree::inOrder(AvlNode *root)
 {
-	inOrder(root->left);
-	printf("%d ", root->element);
-	inOrder(root->right);
+	if (root != NULL)
+	{
+		inOrder(root->left);
+		printf("%d ", root->element);
+		inOrder(root->right);
+	}
 }
 
 /* 后序遍历 */
@@ -151,12 +218,10 @@ void AVLTree::postOrder()
 }
 void AVLTree::postOrder(AvlNode *root)
 {
-	postOrder(root->left);
-	postOrder(root->right);
-	printf("%d ", root->element);
+	if (root != NULL)
+	{
+		postOrder(root->left);
+		postOrder(root->right);
+		printf("%d ", root->element);
+	}
 }
-
-https://blog.csdn.net/u010672692/article/details/45749071
-https://blog.csdn.net/sysu_arui/article/details/7897017
-https://blog.csdn.net/sysu_arui/article/details/7865864
-https://blog.csdn.net/sysu_arui/article/details/7906303
