@@ -33,4 +33,5 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 ## [04Tree 复杂数据结构的C/C++实现](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/04Tree)
 >* 跳跃表 Skip List
 >* 二叉查找树 Binary Search Tree
+>* 平衡二叉树 AVL Tree
 >* 哈夫曼树 Huffman Tree
