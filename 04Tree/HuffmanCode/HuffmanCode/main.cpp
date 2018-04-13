@@ -1,5 +1,5 @@
-/* ¹ş·òÂüÊ÷ Huffman Tree
- * Ê¹ÓÃÓÅÏÈ¶ÓÁĞÀ´¹¹½¨HuffmanÊ÷²¢±àÂë¡¢½âÂë
+/* å“ˆå¤«æ›¼æ ‘ Huffman Tree
+ * ä½¿ç”¨ä¼˜å…ˆé˜Ÿåˆ—æ¥æ„å»ºHuffmanæ ‘å¹¶ç¼–ç ã€è§£ç 
  */
 
 #include<iostream>
@@ -7,10 +7,9 @@
 #include<vector>
 #include<queue>
 #include<string>
-#include<stack>
 using namespace std;
 
-/* ¶¨ÒåHuffmanÊ÷½ÚµãÀàĞÍ */
+/* å®šä¹‰Huffmanæ ‘èŠ‚ç‚¹ç±»å‹ */
 typedef struct HTNode
 {
 	char c;
@@ -21,7 +20,7 @@ typedef struct HTNode
 	{}
 }HTNode, *pNode;
 
-/* ÖØÔØÓÅÏÈ¶ÓÁĞÀïµÄ±È½Ïº¯Êı */
+/* é‡è½½ä¼˜å…ˆé˜Ÿåˆ—é‡Œçš„æ¯”è¾ƒå‡½æ•° */
 struct cmp
 {
 	bool operator()(pNode node1, pNode node2)
@@ -30,13 +29,13 @@ struct cmp
 	}
 };
 
-/* °üº¬½ÚµãÖ¸ÕëµÄ×îĞ¡ÓÅÏÈ¶ÓÁĞ */
+/* åŒ…å«èŠ‚ç‚¹æŒ‡é’ˆçš„æœ€å°ä¼˜å…ˆé˜Ÿåˆ— */
 priority_queue<pNode, vector<pNode>, cmp> pq;
 
-/* ¼ÇÂ¼Huffman±àÂëµÄ¹şÏ£±í */
+/* è®°å½•Huffmanç¼–ç çš„å“ˆå¸Œè¡¨ */
 vector<string> hashTable(256, "\0");
 
-/* ÒÀ¾İÓÅÏÈ¶ÓÁĞ¹¹½¨HuffmanÊ÷ */
+/* ä¾æ®ä¼˜å…ˆé˜Ÿåˆ—æ„å»ºHuffmanæ ‘ */
 void HuffmanCode()
 {
 	pNode l, r;
@@ -54,25 +53,25 @@ void HuffmanCode()
 	}
 }
 
-/* ÖĞĞòµİ¹é±éÀúHuffmanÊ÷Çó½âHuffmanCode */
+/* ä¸­åºé€’å½’éå†Huffmanæ ‘æ±‚è§£HuffmanCode */
 void PrintCode(pNode t, string str)
 {
 	if (t == NULL)
 		return;
-	/* ±éÀú×ó×ÓÊ÷ */
+	/* éå†å·¦å­æ ‘ */
 	if (t->lchild)
 	{
 		str += '0';
 		PrintCode(t->lchild, str);
 	}
-	/* µ½´ïÒ¶×Ó½Úµã£¬´òÓ¡±àÂë */
+	/* åˆ°è¾¾å¶å­èŠ‚ç‚¹ï¼Œæ‰“å°ç¼–ç  */
 	if (t->lchild == NULL && t->rchild == NULL)
 	{
 		hashTable[t->c] = str;
 		cout << t->c << " 's code: " << str << " frequency:" << t->freq << endl;
 	}
-	str.erase(str.end() - 1); /* É¾³ı×îºóÒ»¸ö×Ö·û */
-							  /* ±éÀúÓÒ×ÓÊ÷ */
+	str.erase(str.end() - 1); /* åˆ é™¤æœ€åä¸€ä¸ªå­—ç¬¦ */
+							  /* éå†å³å­æ ‘ */
 	if (t->rchild != NULL)
 	{
 		str += '1';
@@ -80,8 +79,8 @@ void PrintCode(pNode t, string str)
 	}
 }
 
-/* Huffman½âÂë */
-string decode;	/* ´æ´¢½âÂëºóµÄÄÚÈİ */
+/* Huffmanè§£ç  */
+string decode;	/* å­˜å‚¨è§£ç åçš„å†…å®¹ */
 
 void HuffmanDecode(pNode node, char *code)
 {
@@ -102,7 +101,7 @@ void HuffmanDecode(pNode node, char *code)
 int main()
 {
 	string source = "This is the Huffman coding file.Author:Wang Xinqi";
-	cout << "Ô­Ê¼ÄÚÈİ£º\n" << source << endl;
+	cout << "åŸå§‹å†…å®¹ï¼š\n" << source << endl;
 	int frequency[256] = { 0 };
 	for (int i = 0; i < source.size() - 1; ++i)
 		++frequency[source[i]];
@@ -118,11 +117,11 @@ int main()
 	string res = "";
 	for (int i = 0; i < source.size(); ++i)
 		res = res + hashTable[source[i]];
-	cout << "\n¹ş·òÂü±àÂëºóµÄÄÚÈİ£º\n" << res << endl;
+	cout << "\nå“ˆå¤«æ›¼ç¼–ç åçš„å†…å®¹ï¼š\n" << res << endl;
 
 	decode = "";
 	HuffmanDecode(pq.top(), &res[0]);
-	cout << "\n¹ş·òÂü½âÂëºóµÄÄÚÈİ£º\n" << decode << endl;
+	cout << "\nå“ˆå¤«æ›¼è§£ç åçš„å†…å®¹ï¼š\n" << decode << endl;
 
 	system("pause");
 	return 0;
