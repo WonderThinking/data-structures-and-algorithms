@@ -1,4 +1,4 @@
-/* Ë³Ğò²éÕÒ Sequence Search */
+/* é¡ºåºæŸ¥æ‰¾ Sequence Search */
 
 #include<vector>
 using namespace std;
