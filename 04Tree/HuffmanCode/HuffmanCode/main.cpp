@@ -1,127 +1,43 @@
-/* å“ˆå¤«æ›¼æ ‘ Huffman Tree
- * ä½¿ç”¨ä¼˜å…ˆé˜Ÿåˆ—æ¥æ„å»ºHuffmanæ ‘å¹¶ç¼–ç ã€è§£ç 
- */
+/* HuffmanÊ÷¡¢±àÂë¡¢½âÂë */
 
 #include<iostream>
-#include<cstdio>
-#include<vector>
-#include<queue>
 #include<string>
+#include<vector>
+#include"Huffman.h"
 using namespace std;
-
-/* å®šä¹‰Huffmanæ ‘èŠ‚ç‚¹ç±»å‹ */
-typedef struct HTNode
-{
-	char c;
-	unsigned int freq;
-	HTNode *lchild, *rchild;
-	HTNode(char key = '\0', unsigned int fr = 0, HTNode *l = NULL, HTNode *r = NULL) :
-		c(key), freq(fr), lchild(l), rchild(r)
-	{}
-}HTNode, *pNode;
-
-/* é‡è½½ä¼˜å…ˆé˜Ÿåˆ—é‡Œçš„æ¯”è¾ƒå‡½æ•° */
-struct cmp
-{
-	bool operator()(pNode node1, pNode node2)
-	{
-		return node1->freq > node2->freq;
-	}
-};
-
-/* åŒ…å«èŠ‚ç‚¹æŒ‡é’ˆçš„æœ€å°ä¼˜å…ˆé˜Ÿåˆ— */
-priority_queue<pNode, vector<pNode>, cmp> pq;
-
-/* è®°å½•Huffmanç¼–ç çš„å“ˆå¸Œè¡¨ */
-vector<string> hashTable(256, "\0");
-
-/* ä¾æ®ä¼˜å…ˆé˜Ÿåˆ—æ„å»ºHuffmanæ ‘ */
-void HuffmanCode()
-{
-	pNode l, r;
-	while (pq.size() > 1)
-	{
-		pNode z = new HTNode;
-		r = pq.top();
-		pq.pop();
-		l = pq.top();
-		pq.pop();
-		z->rchild = r;
-		z->lchild = l;
-		z->freq = l->freq + r->freq;
-		pq.push(z);
-	}
-}
-
-/* ä¸­åºé€’å½’éå†Huffmanæ ‘æ±‚è§£HuffmanCode */
-void PrintCode(pNode t, string str)
-{
-	if (t == NULL)
-		return;
-	/* éå†å·¦å­æ ‘ */
-	if (t->lchild)
-	{
-		str += '0';
-		PrintCode(t->lchild, str);
-	}
-	/* åˆ°è¾¾å¶å­èŠ‚ç‚¹ï¼Œæ‰“å°ç¼–ç  */
-	if (t->lchild == NULL && t->rchild == NULL)
-	{
-		hashTable[t->c] = str;
-		cout << t->c << " 's code: " << str << " frequency:" << t->freq << endl;
-	}
-	str.erase(str.end() - 1); /* åˆ é™¤æœ€åä¸€ä¸ªå­—ç¬¦ */
-							  /* éå†å³å­æ ‘ */
-	if (t->rchild != NULL)
-	{
-		str += '1';
-		PrintCode(t->rchild, str);
-	}
-}
-
-/* Huffmanè§£ç  */
-string decode;	/* å­˜å‚¨è§£ç åçš„å†…å®¹ */
-
-void HuffmanDecode(pNode node, char *code)
-{
-	if (*code == '\0')
-		return;
-	while (node->lchild != NULL && node->rchild != NULL)
-	{
-		if (*code == '0')
-			node = node->lchild;
-		else
-			node = node->rchild;
-		++code;
-	}
-	decode = decode + node->c;
-	HuffmanDecode(pq.top(), code);
-}
 
 int main()
 {
-	string source = "This is the Huffman coding file.Author:Wang Xinqi";
-	cout << "åŸå§‹å†…å®¹ï¼š\n" << source << endl;
-	int frequency[256] = { 0 };
-	for (int i = 0; i < source.size() - 1; ++i)
-		++frequency[source[i]];
-	for (int i = 0; i < 256; ++i)
-		if (frequency[i] != 0)
-		{
-			pNode node = new HTNode(i - 48 + '0', frequency[i], NULL, NULL);
-			pq.push(node);
-		}
-	HuffmanCode();
-	string str = "";
-	PrintCode(pq.top(), str);
-	string res = "";
-	for (int i = 0; i < source.size(); ++i)
-		res = res + hashTable[source[i]];
-	cout << "\nå“ˆå¤«æ›¼ç¼–ç åçš„å†…å®¹ï¼š\n" << res << endl;
+	/* test1 ÆÕÍ¨ASCIIÂë·¶Î§ÄÚµÄ×Ö·û£¬×Ö·ûÖÖÀà´óÓÚ1 */
+	string file = "This is the Huffman test file.Author:Wang Xinqi";
+	Huffman hfTree;
+	hfTree.HuffmanTree(file);
+	hfTree.HuffmanCode();
+	string code = hfTree.HuffmanCompress(file);
+	string decode = hfTree.HuffmanDecode(code);
+	cout << "Ô­Ê¼ÎÄ¼ş£º\n" << file << endl;
+	cout << "Huffman±àÂëÑ¹ËõºóµÄÎÄ¼ş:\n" << code << endl;
+	cout << "Huffman½âÂëºóµÄÎÄ¼ş:\n" << decode << '\n' << endl;
 
-	decode = "";
-	HuffmanDecode(pq.top(), &res[0]);
-	cout << "\nå“ˆå¤«æ›¼è§£ç åçš„å†…å®¹ï¼š\n" << decode << endl;
+	/* Ö»ÓĞÒ»ÖÖ×Ö·ûµÄÇé¿ö */
+	file = "TTTT";
+	hfTree.HuffmanTree(file);
+	hfTree.HuffmanCode();
+	code = hfTree.HuffmanCompress(file);
+	decode = hfTree.HuffmanDecode(code);
+	cout << "Ô­Ê¼ÎÄ¼ş£º" << file << endl;
+	cout << "Huffman±àÂëÑ¹ËõºóµÄÎÄ¼ş:" << code << endl;
+	cout << "Huffman½âÂëºóµÄÎÄ¼ş:" << decode << '\n' << endl;
+
+	/* ¿ÕÎÄ¼ş */
+	file = "";
+	hfTree.HuffmanTree(file);
+	hfTree.HuffmanCode();
+	code = hfTree.HuffmanCompress(file);
+	decode = hfTree.HuffmanDecode(code);
+	cout << "Ô­Ê¼ÎÄ¼ş£º" << file << endl;
+	cout << "Huffman±àÂëÑ¹ËõºóµÄÎÄ¼ş:" << code << endl;
+	cout << "Huffman½âÂëºóµÄÎÄ¼ş:" << decode << '\n' << endl;
 
 	system("pause");
 	return 0;

@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A6BCE16D-5E7C-4DFA-824B-6DF44FC3C86E}</ProjectGuid>
+    <ProjectGuid>{5D45B802-8B49-4104-8614-C853F54E6DFC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>HuffmanCode</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -143,6 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HTNode.h" />
+    <ClInclude Include="Huffman.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
