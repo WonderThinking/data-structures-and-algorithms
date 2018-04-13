@@ -1,4 +1,4 @@
-/* ¶ş·Ö²éÕÒ Binary Search */
+/* äºŒåˆ†æŸ¥æ‰¾ Binary Search */
 
 #include<iostream>
 #include<vector>
