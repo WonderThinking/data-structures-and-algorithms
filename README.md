@@ -34,5 +34,5 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 跳跃表 Skip List
 >* 二叉查找树 Binary Search Tree
 >* 平衡二叉树 AVL Tree
->* 哈夫曼树 Huffman Tree
 >* 优先队列 Priority Queue
+>* 哈夫曼树 Huffman Tree
