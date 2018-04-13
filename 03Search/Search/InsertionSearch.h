@@ -1,4 +1,4 @@
-/* ²åÖµ²éÕÒ Insertion Search */
+/* æ’å€¼æŸ¥æ‰¾ Insertion Search */
 
 #include<iostream>
 #include<vector>
