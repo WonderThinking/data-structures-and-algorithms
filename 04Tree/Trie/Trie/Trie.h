@@ -1,4 +1,4 @@
-/* ×ÖµäÊ÷µÄÊµÏÖ */
+/* å­—å…¸æ ‘çš„å®žçŽ° */
 
 #include<iostream>
 #include<string>
@@ -10,24 +10,24 @@ class Trie
 private:
 	TrieNode *root;
 public:
-	Trie();							/* ¹¹Ôìº¯Êý */
-	void insert(string word);		/* ²åÈëµ¥´Ê */
-	bool search(string word);		/* ²éÕÒµ¥´Ê */
-	void remove(string word);		/* É¾³ýµ¥´Ê */
-	int prefixNumber(string pre);	/* ÒÔpreÎªÇ°×ºµÄµ¥´ÊÊýÁ¿ */
-	void prePrint();				/* ×ÖµäÐòÊä³ö */
+	Trie();							/* æž„é€ å‡½æ•° */
+	void insert(string word);		/* æ’å…¥å•è¯ */
+	bool search(string word);		/* æŸ¥æ‰¾å•è¯ */
+	void remove(string word);		/* åˆ é™¤å•è¯ */
+	int prefixNumber(string pre);	/* ä»¥preä¸ºå‰ç¼€çš„å•è¯æ•°é‡ */
+	void prePrint();				/* å­—å…¸åºè¾“å‡º */
 
 private:
 	void Trie::prePrint(TrieNode *node, string str);
 };
 
-/* ¹¹Ôìº¯Êý */
+/* æž„é€ å‡½æ•° */
 Trie::Trie()
 {
 	root = new TrieNode();
 }
 
-/* ²åÈëµ¥´Ê */
+/* æ’å…¥å•è¯ */
 void Trie::insert(string word)		
 {
 	if (word.empty())
@@ -46,7 +46,7 @@ void Trie::insert(string word)
 	node->end++;
 }
 
-/* ²éÕÒµ¥´Ê */
+/* æŸ¥æ‰¾å•è¯ */
 bool Trie::search(string word)		
 {
 	if (word.empty())
@@ -64,7 +64,7 @@ bool Trie::search(string word)
 	return node->end != 0;
 }
 
-/* É¾³ýµ¥´Ê */
+/* åˆ é™¤å•è¯ */
 void Trie::remove(string word)
 {
 	if (search(word))
@@ -77,7 +77,7 @@ void Trie::remove(string word)
 			index = word[i] - 'a';
 			if (node->map[index]->path-- == 1)
 			{
-				delete node->map[index];
+				delete[] node->map[index];
 				node->map[index] = NULL;
 				return;
 			}
@@ -86,7 +86,7 @@ void Trie::remove(string word)
 	}
 }
 
-/* ÒÔpreÎªÇ°×ºµÄµ¥´ÊÊýÁ¿ */
+/* ä»¥preä¸ºå‰ç¼€çš„å•è¯æ•°é‡ */
 int Trie::prefixNumber(string pre)	
 {
 	if (pre.empty())
@@ -104,7 +104,7 @@ int Trie::prefixNumber(string pre)
 	return node->path;
 }
 
-/* ×ÖµäÐòÊä³ö,ÏÈÐò±éÀú */
+/* å­—å…¸åºè¾“å‡º,å…ˆåºéåŽ† */
 void Trie::prePrint()
 {
 	if (root == NULL)
