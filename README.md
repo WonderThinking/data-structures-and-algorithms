@@ -37,3 +37,10 @@ A summary of some data structures and algorithms. 一些数据结构与算法的
 >* 二叉查找树 [Binary Search Tree](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/04Tree/BinarySearchTree/BinarySearchTree)
 >* 平衡二叉树 [AVL Tree](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/04Tree/AVLTree/AVLTree)
 >* 字典树（前缀树） [Trie](https://github.com/WonderThinking/data-structures-and-algorithms/tree/master/04Tree/Trie/Trie)
+
+理论介绍（比较清楚的博客）：
+>* [2-3树](http://blog.jobbole.com/79307/)[动画](https://www.2cto.com/kf/201605/512253.html)
+>* [2-3-4树](https://www.cnblogs.com/le23/articles/2329448.html)
+>* [红黑树](http://dongxicheng.org/structure/red-black-tree/)建议红黑树看《算法导论》 [常见问题](https://blog.csdn.net/silangquan/article/details/18655795)
+>* [硬盘存取原理](http://blog.chinaunix.net/uid-23069658-id-3413957.html) [B树、B+树](https://blog.csdn.net/guoziqing506/article/details/64122287) [引申](https://blog.csdn.net/v_july_v/article/details/6530142)
+>* [后缀树](https://www.cnblogs.com/gaochundong/p/suffix_tree.html) [后缀数组](https://wenku.baidu.com/view/228caa45b307e87101f696a8.html)
